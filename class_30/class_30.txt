@@ -1,0 +1,124 @@
+Entity relationship diagram:
+----------------
+
+# Entity name will be singular.
+----
+User Entity ->
+    a. email
+    b. password
+    c. profile -> permission set id
+        => profile id ta profile table theke ashbe
+        => profile id ta profile table er primary key er value.
+        => profile table er primary key er value user table e profile column e boshbe.
+        * without any profile id one cannot create an user.
+            -> the profile id in the user table is the primary key of profile table.
+            -> the profile id in the user table is the foreign key of the user table.
+
+            Definitions:
+                a. primary key: jei unique key diye ami ekta row k uniquely identify korte parbo.
+
+        ---------Example of primary key & foreign key---------
+
+        user
+        ----
+        id  name
+        1   a -> this is a column
+        2   b -> this is a column
+        3   c -> this is a column
+
+        on the above table. Id column is the UUID type. because we can identify eact of the row using the uniqe keys. 
+
+        Only an uniqely identified column has the potential to becoming a foreign key.
+
+        If a primary key of one table gets assigned in some other table then that key becomes a foreign key to that assigned table.
+
+
+# Database relation:
+----------------------
+    1. what is ERD?
+    Ans: An ERD visualizes the relationships between entities like people, things, or concepts in a database. ERD stands for Entity Relationship Diagram.
+
+    what is database cardinality?
+    Ans: Cardinality is the mathematical sense just means the number of values in a set. In relationship to databases and ERD, cardinality specifies how many instances of an entity relate to one instance of another entity.
+
+    What is database ordinality?
+    Ans: ordinality describes the relationship as either mandatory or optional.  ordinality specifies the absolute minimum number of relationships.
+
+    * There are 4 types of database cardinality / database relation:
+        1. one to one.
+        2. one to many.
+        3. many to one.
+        4. many to many.
+
+    * Database Relationship Cardinality:
+
+    -----------|-   one
+    -----------<-   many
+    ---------|-|-   one and only one
+    ---------O-|-   zero or one 
+    ---------|-<-   one or many
+    ----------O<-   zero or many
+
+    profile --  user
+    one     to  many
+
+
+    user    --  profile
+    one     to  one
+
+    {
+        profile --  user
+        one     to  many
+
+
+        user    --  profile
+        one     to  one
+        or
+        many    to  one
+
+        as a whole we can say user & profile has many to one relationship.
+    }
+
+    facts:
+    1. One user can only have one profile.
+    2. ekti profile onekgulo user er hote pare. jemon ekti customer profile onekgulo customer e assign hote pare.
+
+
+    # Normalization: It's a theory. Normalization rules divides larger tables into smaller tables and links them using relationships. 
+    If we ought to do normalization, we need to know about ACID property:
+
+    ACID: In computer science, ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps.
+
+    1NF -> it says we cannot keep an array in a table. Every value has to be atomic.
+
+    # method 1 doesn't follow Normalization.
+    course_id   student_id  course_name
+        1           1       [ "C", "java", "math" ]
+
+    # mwthod 2 follows normalization.
+    course_id   student_id  course_name
+        1           1           C
+        2           1           java
+        3           1           math
+
+    # A single profile can have one or many profile permission.
+    # One or many profile will get assigned to one single profile.
+
+    profile --  profile_permission
+    one     to  one or many
+
+    profile_permission    --  profile
+    one or many           to  one
+
+    ------
+
+    # if system builds a permission by default then it is called standard.
+    # if an user builds a permission then it is custom.
+
+    # Same ekti row er ekta column er primary key, arekta row er parent id column e foreign key hishebe boshte pare.
+
+    example:
+
+    parent service: shop service
+
+    other services: child service.

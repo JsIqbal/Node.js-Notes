@@ -1,0 +1,27 @@
+Total database tables 7:
+    1. admins
+    2. permissions
+    3. permission_services
+    4. profiles
+    5. profile_permissions
+    6. services
+    7. users
+
+
+----------
+
+1. userSeeder function:
+    i. will try to find an user using an email.
+    ii. if not found then will create the user using the email in where and password from the defaults.
+    iii. after finding or creating the thread of execution will execute the then block and will execute the callback function in it.
+
+2. profileSeeder function:
+    i. will try to find the admin.
+    ii. will create a profile for the admin in the profileSeeder functions then block. will be used the Profile tables properties.
+    iii. system admin is a standard type frofile. because it will be created by the programmer. but if a super admin creates an admin then it will be a custom type profile.
+
+    * truncate property in database: cascade true.
+    1. details about truncate property:
+    2. details about cascading property in database:
+
+    # new library : async

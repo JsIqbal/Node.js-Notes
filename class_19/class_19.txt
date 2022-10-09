@@ -1,0 +1,10 @@
+1. server creation;
+2. route creation;
+3. controller creation;
+4. relation betweeon router & controller;
+5. Database creation using sequelize;
+6. seeder creation using sequelize;
+7. project structure understanding.
+8. default.js to configure .
+
+9. install lodash & glob

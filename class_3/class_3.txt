@@ -1,0 +1,8 @@
+1. execution context.
+2. callstack.
+3. function statement.
+4. function call.
+5. arguments vs parameter.
+6. hoisting.
+7. reference error.
+8. type error.

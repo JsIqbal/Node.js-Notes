@@ -1,0 +1,50 @@
+1. asking question from set timeout.
+
+// for (var i =1; i <= 5; i++) { // ekhane 5 ta block create hocche, kintu shobar shesh e memory leak hocche..karon var holo global scope e reside kore. var dile shobgula function er jonno lexical environment 1tai.
+//     setTimeout(
+//         () => {
+//             console.log(i);
+//         }, i*1000)
+// }
+
+
+// for (let i =1; i <= 5; i++) { // ekhane 5 ta block create hocche, ebong 5 ta lexical environment create hocche. let diye define korar jonno i ta 5 bar alada alada value tar vitore alada alada block scope e rekhe dicche. jar karone memory leak hocche na.
+//     setTimeout(
+//         () => {
+//             console.log(i);
+//     }, i*1000)
+// }
+
+
+// for (var i=1; i <= 5; i++) {
+//     console.log(i);
+// }
+
+// -----first class function forEach
+
+// const arr = [1,2,3,4,5]
+
+function print(number, index) { // 
+    console.log(number, index);
+}
+
+// print(3, 2);
+// print(6, 1);
+
+const arr = [1,2,3,4,5];
+
+arr.forEach(print); // forEach ta holo ekti native function ja js creator ra natively code kore rekhe diyechen. forEach ekti first class function. ja tar parameter e ekti callback function k expect kore . parameter e thaka callback function ti totobar e call hobe joto gulo value forEach k call kora array'r vitor thakbe. ei khetre array ekti object er chadore muriye giyeche. foreach function ti jokhon callback function k call kore tokhon callback function er parameter e 2ti argument pass kore. jar ekti holo number or array er vitore thaka data gulo, r ditio argument ti holo oi array er index. tar mane amader callback function ti k call korar time e forEach function ti callback function er parameter e 2 ti argument expect kore. amra shobshomoy forEach function use korbo..kokhono for loop use korbo na.
+
+void forEach(callback) {
+    for (var i = 0; i < this.leng; i++) {
+        callback(arr[i], i);
+        
+    }
+}
+
+
+-------------
+2. object & class...
+3. ekta object e key : value akare shob joma thake..ebong eke opore key : value diye saparate thake...
+4. key = property.
+5. object is non premitive data type.

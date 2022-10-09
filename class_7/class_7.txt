@@ -1,0 +1,25 @@
+1. increamenting variable and closure.
+2. using 4 function insind one another and returning the number 4 function in the most outer function upon the time of most outer function call. and using [mostOuter()()();] this execution line to understand the returning functions calls. also understanding the closure. because the closure will have a variable which will be inside the first function's memory component. Hense scope, hence scope chain, hence lexical environment, hence closure !
+
+3. node module was created using closure.
+4. memory leak.
+5. es 6.
+6. let, const.
+7. temporal dead zone.
+8. undefined is a placeholder. mane amake kichu ekta daw ami hoilam khali ekta jayga. (jei jinish kono jinish k dokhol kore na. jei jinish memory k dokhol kore na.)
+
+/------block er concept esheche if/else theke---
+9.  if else are single line expression.
+10. curley braces {}
+11. block . block hocche curley braces {}.
+/-------
+
+12. function er curley braces holo function er syntax. fun () {...}
+
+13. memory component have 3 part global scope, block scope, script scope.
+
+14. using block to solve memory leak.
+
+15. script scope example.
+
+16. flow - 1. global scope - script scope - block scope.

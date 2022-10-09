@@ -1,0 +1,77 @@
+Relational Database:
+    1. Async functional always returns a promise.
+    2. array.map(async () => {}) : In here map returns an array of promises. To resolve all of this and go to the next line, we need to use Promise.all, so that we can resolve all the pending promises.
+
+    const permissionSetWithPermissions = await PermissionSet.findOne({ // we are trying to find a row using permissionSet id.
+
+            where: { id: permissionSet.id }, // here we tried using the permissionSet id.
+
+            include: [
+                {
+                    model: PermissionSetWithPermission, // the foreign key is permission set id.
+
+                    as: "permission_set_with_permission", // in the response body.
+                    include: [
+                        {
+                            model: Permission, // the foreign key is the permission id. This table has one to one relation with permissionSetWithPermissionspermissionSetWithPermissions table.
+
+                            as: "permission" // in the response body
+                        }
+                    ]
+                }
+            ]
+        });
+
+        res.status(201).send(permissionSetWithPermissions);
+
+-----------------------------------------------------------------------------
+
+permission set table // has one to many relation with permissionSetWithPermissionTable 
+---------------------
+
+id title 
+1   a
+
+
+
+permissionSetWithPermissionTable // has many to one relation with permission set table.
+-------------------
+id permissionSetId permissionId
+1  1               2
+2  1               3
+
+
+
+
+
+
+permission table // has one to one relation with permissionSetWithPermissions
+---------------
+
+id title
+1  a
+2  b
+3  c
+
+
+
+id title id permissionSetId permissionId id title // this table has been created in the ram virtually and sent as a respond to the request.
+
+1   a     1    1              2           2   b
+1   a     2    1              3           3   c
+
+
+
+{
+	id: 1,
+	title: a,
+
+	"permissionSetWithPermissions": [
+        {
+        
+        },
+        {	
+            
+        }
+	]
+}

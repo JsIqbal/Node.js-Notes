@@ -1,0 +1,9 @@
+1. all the schema validation will be in one file.
+
+2. one file must have one responsibility, one function must have one responsibility.
+
+3. middleware function:
+
+    1. modules -> core -> middlewares -> validator.middleware.js
+
+    2. all common middleware will be inside the core in the middlewares folder.

@@ -1,0 +1,9 @@
+1. function declaration.
+2. function expression.
+3. arrow function.
+4. anonymous function.
+5. IIFE.
+6. lexical environment.
+7. scope chain.
+8. scope.
+9. shadowing.

@@ -1,0 +1,6 @@
+1. single expression.
+2. function expression.
+3. description and power of paranthesis.
+4. revision of previous class.
+5. asking all the students different questions regarding last classes.
+6. closure.

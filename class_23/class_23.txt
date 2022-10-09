@@ -1,0 +1,35 @@
+1. after getGlobalConfig.
+
+    the flow:
+    1. install lodash,
+    2. install globe,
+    3. paste the getGlobbedPaths function.
+
+# Describing the getGlobbedPaths function:
+    1. it requires 2 arguments upon function call:
+        i. globPatterns : the routes array which we got from default.js.
+        ii. excludes: the string that we want to exclude.
+
+    2. after calling the getGlobbedPaths function, the function returns us an array that has all the routes path in it as strings one by one.
+
+    * the work of this function is to match the patterns and get all the .routes files inside an array and return the array.
+
+    3. the getGlobbedPaths makes the routes included dynamically.
+
+    'src/modules/**/*.routes.js' : ** makes sense folder. * make sense a file. .routes.js makes sense the file's ending.
+# status:
+    1. 404 : Not Found.
+    2. 500 : Internal Server Error.
+    3. 200 : success.
+    4. 400 : Bad Request.
+    5. 403: Forbidden.
+    # google api status code.
+
+2. to use token:
+    1. install jsonwebtoken
+
+3. to make the cookieParser: cookie-parser.
+
+* when we are logged in fb, the fb gives us a token, the token can only be broken by the secret key.
+
+* to crack a token, hacker has to crack 2 secret.

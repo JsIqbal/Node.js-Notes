@@ -1,0 +1,64 @@
+class 11-13:
+
+-1. global
+0. file -> module
+1. exports, module, require, __filename, __dirname -> module wrapper function.
+2. custom module.
+3. built in module
+    -> os
+        - cpus()
+        - freemem()
+        - totalmem()
+    -> path
+        - resolve()
+        - join()
+        - parse()
+    -> eventEmitter
+        - on ('event name', callback)
+        - emit ('event_name')
+    -> fs
+        - readFile
+        - readFileSync
+        - writeFileSync
+            class FileSystem extends EventEmitter {
+                
+            }
+    -> http
+        - createServer
+        - listen
+
+1. http -> eventEmitter
+2. express -> http (Node.js)
+3. node -> framework -> nest.js -> express
+----------------
+
+calss 14:
+
+    business -> PM
+    engineering -> senior engineer / team lead/ software engineer
+    engineering knowledge -> intern, junior engineer, software engineer
+    programming -> university.
+    programming knowledge -> university.
+    ------------
+
+1. npm init -y // to get the package.json file.
+2. npm install express
+3. require the express module from node modules.
+4. put the express module in an object.
+5. all the createServer method using the express object.
+
+7. open browser and put localhost:3000 & hit enter.
+8. npm run start.
+9. install nodemon globally.
+10. npm run start.
+
+
+
+
+
+task:
+1. post create;
+2. all post get;
+3. single post get;
+4. sinle post delte;
+5. single post update;

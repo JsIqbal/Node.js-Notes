@@ -1,0 +1,123 @@
+1/ The executable files are always in binary form.
+
+2/ The binary form executable file is saveb as line by line. Each line can have 64 bit or 32 bit value assign to it.
+
+3/ In ram the first portion of memory gets occupied by our system processes or system program's processes. (Ram's every cell memory can also be 32 bit or 64 bit)
+
+4/ After that comes the executable file part.
+
+5/ The executable file(when run), gets assigned line by line in the random access memory's memory cell. 
+
+6/ A ram has lots of memory cells just like the hard drive but ram is faster than the hard drive. each memory cells can be 32 bit or 64 bit.
+
+7/ The executable files each line is a binary line which then gets included in the random access memory cell in the time of program execution.
+
+8/ The processor has 2 part.
+9/ 1) The processing unit;
+  2) The register set.
+
+====
+10/ Our processor just do only a handfull of work just like add,sub,mul,div,and,or,not.
+
+11/ There are multiple register in the register set.
+	such as:
+	ax
+	bx
+	cx
+	px
+	etc.
+
+12/ there is a register set whose name is the pointing register.
+
+13/ One single register is only one single cell memory thus pointing register is only one memory cell that can store only one binary executable line which can be 32 bit or 64 bit.
+
+14/ If the processor's register set's cell memory is 32 bit then the computer is a 32 bit computer.
+
+15 one of the most important register is the pointing register.
+
+16/ Pointing register has only one address assign to it.
+
+17/ Ram er jekono ekta cell er address k point kore rakhe amader pointing register.
+
+18/ when we run an executable file. the first line is held into the part of the ram.
+
+19/ Then the pointing register points to that memory cell's address.
+
+20/ processing unit knows no other information than the pointing register..
+
+21/ Then the processing unit executes the value inside the pointing register address.
+
+
+
+22/ processor execute kore bolei amra computer e kaj korte pari.
+
+উপরে আমরা যেই কাজ গুলো দেখলাম সব হলো শুধুমাত্র একটা প্রসেস এর কাজ। যা আমাদের শুরুর দিকের কম্পিটারে হতো।
+
+* আগে এট এ টাইম কম্পিটারে একটাই কাজ করা যেত। (one program at a time) 
+--------------------
+
+23/  Process: when pointing register points to a memory cells address. when a software is loaded in the ram and the pointing register pointing to an address and the processing unit started the executing line by line from the pointing redisters pointed values is called a process.
+
+24/ Every program has only one process. which is line by line code execution.
+
+25/ One process is saparated from another process. Process gives a marker to the end point for the pointing register.
+ 
+26/ When a code gets executed a, a process is created.
+
+27/ process == virtual computer.
+
+28/ process k eta bole boka banano hoy j process nije chara computer e r keu run hocche na.
+
+29/ code tai process. process thake ram er moddhe.
+
+30/ 100 koti cell computer 1 second e execute korte pare.
+
+31/ manush 1/10 sec er age kichu ghote gele ta ter pay na.
+
+32/ jara ek kane beshi shune ek kane kom shune tader deja vu beshi hoy.
+
+33/ pointing register jumps from one process to another process by switching context or concurrency and saving the previous process last executed lines information of the register set in the PCB(Process control block).
+
+34/ jumping from one process to another process is said context switching.
+
+35/ when all the process are run one time..then the pointing register comes again to the first process and it doesn't know where to start. That's why it takes information from the pcb where did the pointing register stopped. Thus continuous from the next memory cell address.
+
+36/ pcb has relation with the ram process.
+
+37/ every process has one uniqe id in the pcb and in there is the last saved register set information.
+
+38/ we are not saving code in the pcb..we are saving the information of the register set.
+
+39/ by switching context a single core can run more than one process. this is called concurrency.
+
+40/ every core has 2 logical processor.
+
+41/ When each processor executes only one process then it is said parallal programming or multi programming. example: 6 cpu running 6 process.
+
+42/ if one processor runs more than one process and the rest processors does only one process. then there will be concurrency in one processor and there will also be parallal programming. example: logical cpu 6 but process running 7. 
+
+43/ process is the execution of the code. (process is also the virtual computer)
+
+44/ a good computer is the higher generation.
+
+45/ core i3 cpu 5th gen -> suppose for 6 process-> 1s -> 10^8 -> 10 koti -> 6 x 10 = 60 koti
+
+46/ core i3 cpu 6th gen -> 1s -> 10^9 -> 100 koti -> 6x 100 = 600 koti
+
+47/ core i4 cpu 5th gen -> suppose for 8 process-> 1s -> 10^8 -> 10 koti -> 8 x 10 = 80 koti
+
+48/ another name for thread is virtual processing
+
+* process jemon computer er moto achoron kore..thread temon process er moto achoron kore but virtually.
+
+49/ In thread there is also concurrency..meaning context switching.
+
+50/ In thread context switching not too much information is saved to the pcb except the line which was being executed.
+
+51/ In thread concurrency kono time e lage na context switching e eta eto fast!
+
+52/ When one process is working only one work. then it has only one thread.
+
+53/ When multiple work happens in the process then multiple threadding occurs and thread context switching or virtual process context switching happens.
+
+JavaScript is a single threaded language but faster than multi threaded language!.

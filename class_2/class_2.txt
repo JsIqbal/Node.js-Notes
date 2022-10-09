@@ -1,0 +1,7 @@
+1. variable name being saved as memory cell name.
+2. execution context.
+3. memory compnent.
+4. code component.
+5. creation phase.
+6. execution phase.
+5. callstack.

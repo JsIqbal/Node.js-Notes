@@ -1,0 +1,12 @@
+1. mother process;
+2.child process;
+3. setTimeout api;
+4. browser;
+5. js engine;
+6. browser resource;
+7. apis;
+8. threadpool;
+9. heap;
+10; micro tast que, callback que;
+11. event loop;
+12. discision : js is a single thread programming language but still fastest language.

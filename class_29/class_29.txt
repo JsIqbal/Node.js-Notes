@@ -1,0 +1,11 @@
+strategy:
+------------
+1. strategy create hobe j route ta use korbe tar jonno.
+2. strategy mane holo , ekta user already logged in kina ta check kora.
+3. stretegy banano hoy user der jonno.
+4. j login korbe tar jonno stretegy make kora hobe.
+----
+
+5. api/permissions api route ti j use korbe strategy ta make kora hobe tar jonno.
+
+question: generateAccessToken can be global?
