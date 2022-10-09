@@ -1,0 +1,25 @@
+# Setting up 2 containers for docker.
+
+1. comment the app part in docker compose yml file.
+2. comment the run start comand in dockerfile.
+3. docker-compose up.
+
+4. open another bash to check the database container.
+	1. run comand docker ps.
+	2. run comand docker exec -it container id sh
+	3. mysql -u root -p
+	4. pass: 123456
+	5. show databases
+	6. use <database name>
+	7. show tables
+	8. exit.
+
+5. return to previous bash.
+6. comment out docker compose file app part.
+7. docker-compose up.
+8. after db seed complete.
+9. in dockerfile comment run seed. comment out run start.
+10. docker-compose build.
+11. docker-compose up.
+
+* check in postman :-)

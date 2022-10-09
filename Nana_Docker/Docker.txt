@@ -1,0 +1,125 @@
+# Introduction:
+1. what is Docker? What is a Container?
+2. Docker vs Virtual machine.
+3. Docker Installation.
+4. Main Commands.
+5. Debugging a Container.
+6. Volumes - Persisting Data.
+7. Developing with Containers.
+8. Docker Compose - Running multiple services.
+9. Dockerfile - Building own Docker image.
+10. Private Docker Repository (AWS)
+11. Deploying the containerized App.
+12. Volumes Demo.
+
+-------------- class -1
+1. What is a container?
+
+    i. A way to package application with all the necessary dependencies and configuration.
+
+    ii. Portable artifact, easily shared and moved around.
+
+    iii. Makes development and deployment more efficient.
+
+2. where do containers live?
+
+    i. container repository. (postgres, redis, nodejs, nginx)
+
+    ii. Private repositories.
+
+    iii. public repository for Docker: DockerHub. https://hub.docker.com/
+
+3. Before containers the problems we had to face:
+
+    i. Installation process different.
+        On each OS environment.
+    ii. Many steps where something could go wrong and the system doesn't work.
+
+    iii. we had to install the binaries in different machine in order for the project to run in them.
+
+4. After containers:
+    i. own isolated environment.
+
+    ii. packaged with all neded configuration.
+
+    iii. one comand to install the app.
+
+    iv. run same app with 2 different versions.
+
+    A container will have the configurations and the start script. one just needs to know which container he needs to find from the docker hub.
+
+* Developers and operations work together to package the application in a container.
+
+* no environmental configuration needed on server except docker runtime to run the containers.
+
+------------- class 2
+
+1. what is a container technically?
+    i.Layers of images. mostly alpine.
+    ii. mostly linux base image, because small in size.
+    iii. application image on top.
+
+A practical example of a docker container:
+
+    comands:
+        1. in docker hub search postgresql.
+        2. in terminal docker run <the image name and version:> if not given the version then docker will download the latest one.
+
+        docker ps : to see the running containers.
+
+    docker image: its the actual package or artifact, which is movable.
+
+    container: an image which has been started in a machine is a container.
+
+-----class 4
+
+1. OS kernal layer: that comunicates with the hardware.
+
+2. applications layer: they are based on kernal.
+
+# Docker virtualization the Application layer. uses the kernal of the host.
+
+# VM virtualizes the OS. vs has its own os kernal on top of the host kernal.
+
+----class 5 docker install
+
+------class 6
+# Different image and container
+
+1. container is a running environment for image.
+
+2. container has virtual file system.
+3. port binded: talk to application running inside of container. port 5000
+4. application image: postgres, redis, mogo etc
+
+----class 7
+
+1. docker pull <image name> -> to pull image from the docker hub.
+
+2. docker images -> to view the existing images.
+
+3. docker run <image name> -> to create the container and run the image into it.
+
+4. docker ps -> to check the running docker containers.
+
+5. couldn't find a way to close docker.
+
+6. docker run -d redis -> run the container in a detach mode.
+
+7. docker stop id -> to stop a container.
+
+8. docker start id -> to start the container.
+
+# A docker container runs in a specific port. so to run 2 different versions of the same image we need to bind the ports. which is called port binding.
+
+9. docker run -p6000:6379 redis -> in here p6000 is our host machines dedicated port which we are assigning to the container image port which is 6379.
+
+10. docker logs (names or id of the container).
+
+11. docker run -d -p6001:6379 --name redis-older redis:6.0 -> to name the container by you want.
+
+12. docker exec -it (container id) /bin/bast -> ls -> pwd -> cd / -> ls -> env ...etc
+
+13. docker image rm <image id> -> to remove the image from the system.
+
+---------project
