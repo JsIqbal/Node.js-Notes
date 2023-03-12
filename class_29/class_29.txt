@@ -9,3 +9,50 @@ strategy:
 5. api/permissions api route ti j use korbe strategy ta make kora hobe tar jonno.
 
 question: generateAccessToken can be global?
+
+
+Example:
+
+class Passport {
+    
+    use(x, obj) {
+        this.strategyName = x;
+        this.secretOrKey = obj.opt.secretOrKey;
+        this.cookieExtractor = obj.opt.cookieExtractor;
+        this.callback = obj.callback;
+    }
+    
+    authenticate(stategyName, done) {
+        return function (req, res, next) {
+            const token = this.cookieExtractor(req);
+            
+            const decoded = jwt.verify(token, this.secretOrKey);
+            
+            this.callback(decoded, done);
+        }
+    }
+}
+
+
+
+passport.use("user-jwt", new Strategy({ secretOrKey, cookieExtractor }, function (payload, done) {
+    const user = findUser(payload.email);
+    if(user) done(null, user);
+    else done(null, false);
+}));
+
+
+
+/users route -> patch method
+
+AuthStrategy(req, res, next) {
+    const auth = passport.authenticate("user-jwt", function (err, user) {
+        if(!user) return res.status(401).send("Unauthenticated user");
+        
+        req.logIn(user, {}, function(err) {
+            next();
+        })
+    });
+    
+    auth(req, res, next);
+}
