@@ -9,8 +9,8 @@ Database Normalization:
 - 3NF
 
 Relationships under posts and user table:
-- One-to-many relationship: If we go from below to up
 - Many-to-one relationship: If we go from above to below
+- One-to-many relationship: If we go from below to up
 
 POsts Table:
 - Primary key: id
