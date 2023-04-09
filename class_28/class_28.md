@@ -1,4 +1,4 @@
----dbdiagram.io
+#dbdiagram.io
 
 
 database er uniqe j column thakbe take bole primary key
