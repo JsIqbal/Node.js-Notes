@@ -37,7 +37,7 @@ User Table:
 
 
 Inconsistency Problem:
-- If we change the name of a user in the User table, the name query will not work in the Course table, leading to an inconsistency problem. that's why we are using foreign key.
+- If we change the name of a user in the User table, the name query will not work in the user table if we use name as foreign key, leading to an inconsistency problem. that's why we are using foreign key as user id.
 
 Student-Course Table:
 - Columns: studentid, courses
