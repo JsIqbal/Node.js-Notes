@@ -1,77 +1,45 @@
-Relational Database:
-    1. Async functional always returns a promise.
-    2. array.map(async () => {}) : In here map returns an array of promises. To resolve all of this and go to the next line, we need to use Promise.all, so that we can resolve all the pending promises.
+---dbdiagram.io
 
-    const permissionSetWithPermissions = await PermissionSet.findOne({ // we are trying to find a row using permissionSet id.
 
-            where: { id: permissionSet.id }, // here we tried using the permissionSet id.
+database er uniqe j column thakbe take bole primary key
 
-            include: [
-                {
-                    model: PermissionSetWithPermission, // the foreign key is permission set id.
+database normalization:
+1nf
+2nf
+3nf
 
-                    as: "permission_set_with_permission", // in the response body.
-                    include: [
-                        {
-                            model: Permission, // the foreign key is the permission id. This table has one to one relation with permissionSetWithPermissionspermissionSetWithPermissions table.
+-------
+so, if we have 2 database table and one is user table and one is post table then there can be multiple user and each user can have multiple posts so that's why we'll be using the user table's user id as post table's owner and this is called one to many realationship.
 
-                            as: "permission" // in the response body
-                        }
-                    ]
-                }
-            ]
-        });
+so, in the table where the primary key of a table sit's in another table's column is the foreign key of that table
 
-        res.status(201).send(permissionSetWithPermissions);
 
------------------------------------------------------------------------------
+one single service can have multiple permissions - from service to permission is one to many and reverse is many to one
+again one single permission can have multiple services attached to it.
+this case is called many to many relationship
 
-permission set table // has one to many relation with permissionSetWithPermissionTable 
----------------------
-
-id title 
-1   a
+database : cardinality and ordinality - the signs are said that
+there are 4 types of relation in database:
+1. one to one
+2. one to many
+3. many to one
+4. many to many
 
 
 
-permissionSetWithPermissionTable // has many to one relation with permission set table.
--------------------
-id permissionSetId permissionId
-1  1               2
-2  1               3
+
+----
+1 user will have 1 profile
+1 profile can be assigned to many user
+1 profile will have many permission
+1 permission can have many service
+
+by authorizing services we can define the routes of our controllers. who can use the routes.
 
 
 
 
 
 
-permission table // has one to one relation with permissionSetWithPermissions
----------------
-
-id title
-1  a
-2  b
-3  c
 
 
-
-id title id permissionSetId permissionId id title // this table has been created in the ram virtually and sent as a respond to the request.
-
-1   a     1    1              2           2   b
-1   a     2    1              3           3   c
-
-
-
-{
-	id: 1,
-	title: a,
-
-	"permissionSetWithPermissions": [
-        {
-        
-        },
-        {	
-            
-        }
-	]
-}
