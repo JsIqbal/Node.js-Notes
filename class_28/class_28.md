@@ -1,48 +1,16 @@
-#dbdiagram.io
+# dbdiagram.io
 
+Database ER:
+- Unique column will be the primary key of the table.
 
-database er uniqe j column thakbe take bole primary key
-
-database normalization:
-1nf
-2nf
-3nf
-
--------
-so, if we have 2 database table and one is user table and one is post table then there can be multiple user and each user can have multiple posts so that's why we'll be using the user table's user id as post table's owner and this is called one to many realationship.
-
-so, in the table where the primary key of a table sit's in another table's column is the foreign key of that table
-
-
-one single service can have multiple permissions - from service to permission is one to many and reverse is many to one
-again one single permission can have multiple services attached to it.
-this case is called many to many relationship
-
-database : cardinality and ordinality - the signs are said that
-there are 4 types of relation in database:
-1. one to one
-2. one to many
-3. many to one
-4. many to many
-
-
-
-
-----
-1 user will have 1 profile
-1 profile can be assigned to many user
-1 profile will have many permission
-1 permission can have many service
-
-by authorizing services we can define the routes of our controllers. who can use the routes.
-
+Database Normalization:
+- 1NF
+- 2NF
+- 3NF
 
 Relationships:
 - One-to-many relationship: If we go from below to up
 - Many-to-one relationship: If we go from above to below
-
-Normalization:
-- 1NF: There should not be multiple values in a single column. Each value should be atomic.
 
 Course Table:
 - Primary key: id
@@ -85,8 +53,19 @@ User Table:
 Inconsistency Problem:
 - If we change the name of a user in the User table, the name query will not work in the Course table, leading to an inconsistency problem.
 
+Cardinality and Ordinality:
+- The signs represent the following types of relationships:
+  - One-to-one
+  - One-to-many
+  - Many-to-one
+  - Many-to-many
 
+There are 4 types of relationships in a database:
+- One-to-one
+- One-to-many
+- Many-to-one
+- Many-to-many
 
-
-
-
+Permissions and Services:
+- One single service can have multiple permissions (one-to-many)
+- One single permission can have multiple services (many-to-many)
