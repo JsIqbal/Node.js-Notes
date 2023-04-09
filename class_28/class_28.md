@@ -76,3 +76,68 @@ There are 4 types of relationships in a database:
 Permissions and Services:
 - One single service can have multiple permissions (one-to-many)
 - One single permission can have multiple services (many-to-many)
+
+
+# Explaination of the dbdiagram:
+
+# User-Profile-Permission-Service Relationships
+
+There will be multiple types of users, but each user will have only one profile. A profile will be made up of multiple permissions, and a permission can be in multiple profiles. A permission will be made with multiple services, and a service can be in multiple permissions.
+
+## Relationships
+- One-to-one relationship: User to Profile
+- One-to-many relationship: Profile to Permission, Permission to Service
+- Many-to-many relationship: Permission to Profile, Service to Permission
+
+## Schema
+
+### User
+- Primary key: id
+- Columns: (other user information)
+
+### Profile
+- Primary key: id
+- Columns: (other profile information)
+
+### Permission
+- Primary key: id
+- Columns: (other permission information)
+
+### Service
+- Primary key: id
+- Columns: (other service information)
+
+### User-Profile Table
+- Columns: user_id (foreign key referencing User.id), profile_id (foreign key referencing Profile.id)
+
+### Profile-Permission Table
+- Columns: profile_id (foreign key referencing Profile.id), permission_id (foreign key referencing Permission.id)
+
+### Permission-Service Table
+- Columns: permission_id (foreign key referencing Permission.id), service_id (foreign key referencing Service.id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
