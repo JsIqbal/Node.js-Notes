@@ -35,6 +35,10 @@ User Table:
 | 2   | riyad  |
 | 3   | ruhin  |
 
+
+Inconsistency Problem:
+- If we change the name of a user in the User table, the name query will not work in the Course table, leading to an inconsistency problem. that's why we are using foreign key.
+
 Student-Course Table:
 - Columns: studentid, courses
 - Sample data:
@@ -44,15 +48,17 @@ Student-Course Table:
 | 1         | bangla,eng   |
 | 2         | node,react   |
 | 3         | mic          |
+
+
+| studentid | courses      |
+| --------- | ------------ |
 | 1         | bangla       |
 | 1         | eng          |
 | 2         | node         |
 | 2         | react        |
 | 3         | mic          |
 
-
-Inconsistency Problem:
-- If we change the name of a user in the User table, the name query will not work in the Course table, leading to an inconsistency problem.
+* On the above tabe we have maintained normalization that each field will only have singular value
 
 Cardinality and Ordinality:
 - The signs represent the following types of relationships:
