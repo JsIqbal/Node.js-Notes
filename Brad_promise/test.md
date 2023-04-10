@@ -1,6 +1,6 @@
 ```javascript
 function print(resolve, reject) {
-    console.log("--------callback execute hoisi------------");
+    console.log("--------callback executed------------");
     console.log(resolve, reject);
     setTimeout(() => {
         console.log("Call stack e ashsi");
@@ -8,6 +8,8 @@ function print(resolve, reject) {
         resolve(user);
     }, 2000);
 }
+
+// Under the hood in promise
 /*
 class Promise {
     constructor(callback) {
@@ -44,10 +46,4 @@ prom1
 
 console.log("end");
 ```
-/*
-1. promise j function er moddhe thakbe tar age async word ta use korte hobe.
-2. jokhon amra kono function er vitor 
-
-objective questions. 10 
-
-*/
+* We have to use async before the function that has promise inside of it
