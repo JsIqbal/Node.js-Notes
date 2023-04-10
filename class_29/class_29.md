@@ -14,16 +14,6 @@ This codebase uses Sequelize as an Object Relational Mapping (ORM) tool to defin
 - Profile has a many-to-many relationship with Permission through the PermissionProfile junction table.
 - Permission has a many-to-many relationship with Service through the ServicePermission junction table.
 
-
-
-
-
-
-
-
-
-
-
 strategy:
 ------------
 1. strategy create hobe j route ta use korbe tar jonno.
@@ -32,58 +22,36 @@ strategy:
 4. j login korbe tar jonno stretegy make kora hobe.
 5. api/permissions api route ti j use korbe strategy ta make kora hobe tar jonno.
 ----
-
 class Passport {
-    
-    use(x, obj) {
-        this.strategyName = x;
-        this.secretOrKey = obj.opt.secretOrKey;
-        this.cookieExtractor = obj.opt.cookieExtractor;
-        this.callback = obj.callback;
-    }
-    
-    authenticate(stategyName, done) {
-        return function (req, res, next) {
-            const token = this.cookieExtractor(req);
-            
-            const decoded = jwt.verify(token, this.secretOrKey);
-            
-            this.callback(decoded, done);
-        }
-    }
+  use(x, obj) {
+    this.strategyName = x;
+    this.secretOrKey = obj.opt.secretOrKey;
+    this.cookieExtractor = obj.opt.cookieExtractor;
+    this.callback = obj.callback;
+  }
+  authenticate(strategyName, done) {
+    return function (req, res, next) {
+      const token = this.cookieExtractor(req);
+      const decoded = jwt.verify(token, this.secretOrKey);
+      this.callback(decoded, done);
+    }.bind(this);
+  }
 }
-
-passport.use("user-jwt", new Strategy({ secretOrKey, cookieExtractor }, function (payload, done) {
+passport.use(
+  "user-jwt",
+  new Strategy({ secretOrKey, cookieExtractor }, function (payload, done) {
     const user = findUser(payload.email);
-    if(user) done(null, user);
+    if (user) done(null, user);
     else done(null, false);
-}));
-
-/**
- * PATCH /users
- * @function
- * @middleware
- * @name AuthStrategy
- * @param {Object} req - Express request object
- * @param {Object} res - Express response object
- * @param {Function} next - Express next middleware function
- * @returns {undefined}
- */
+  })
+);
+// /users route -> patch method
 function AuthStrategy(req, res, next) {
-    const auth = passport.authenticate("user-jwt", function (err, user) {
-        if(!user) return res.status(401).send("Unauthenticated user");
-        
-        req.logIn(user, {}, function(err) {
-            next();
-        })
+  const auth = passport.authenticate("user-jwt", function (err, user) {
+    if (!user) return res.status(401).send("Unauthenticated user");
+    req.logIn(user, {}, function (err) {
+      next();
     });
-    
-    auth(req, res, next);
+  });
+  auth(req, res, next);
 }
-
-
-question: generateAccessToken can be global?
-
-
-
-----------------------------------------------
