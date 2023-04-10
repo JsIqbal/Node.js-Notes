@@ -22,6 +22,7 @@ strategy:
 4. j login korbe tar jonno stretegy make kora hobe.
 5. api/permissions api route ti j use korbe strategy ta make kora hobe tar jonno.
 ----
+```javascript
 class Passport {
   use(x, obj) {
     this.strategyName = x;
@@ -59,3 +60,4 @@ function AuthStrategy(req, res, next) {
   
   auth(req, res, next);
 }
+```
