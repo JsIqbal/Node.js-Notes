@@ -1,3 +1,4 @@
+```javascript
 const posts = [
     {
         title: 'post one',
@@ -47,3 +48,4 @@ async function init() {
 }
 
 init();
+```
