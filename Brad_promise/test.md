@@ -1,3 +1,4 @@
+```javascript
 function print(resolve, reject) {
     console.log("--------callback execute hoisi------------");
     console.log(resolve, reject);
@@ -42,7 +43,7 @@ prom1
 });
 
 console.log("end");
-
+```
 /*
 1. promise j function er moddhe thakbe tar age async word ta use korte hobe.
 2. jokhon amra kono function er vitor 
