@@ -1,3 +1,5 @@
+# Explaining Seeder.js:
+
 This codebase uses Sequelize as an Object Relational Mapping (ORM) tool to define and manage the database schema. The database has the following tables and their respective relations:
 
 ## Tables
@@ -14,7 +16,7 @@ This codebase uses Sequelize as an Object Relational Mapping (ORM) tool to defin
 - Profile has a many-to-many relationship with Permission through the PermissionProfile junction table.
 - Permission has a many-to-many relationship with Service through the ServicePermission junction table.
 
-strategy:
+# Explaining strategy:
 ------------
 1. strategy create hobe j route ta use korbe tar jonno.
 2. strategy mane holo , ekta user already logged in kina ta check kora.
