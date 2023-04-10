@@ -1,17 +1,19 @@
 This codebase uses Sequelize as an Object Relational Mapping (ORM) tool to define and manage the database schema. The database has the following tables and their respective relations:
 
-Tables
-User: stores user information such as email, first name, last name, and password. Each user can have a profile and belong to many services.
-Profile: stores profile information such as name, description, and type. Each profile can belong to many users and have many permissions.
-Permission: stores permission information such as name, description, and type. Each permission can belong to many profiles and have many services.
-Service: stores service information such as name and description. Each service can belong to many permissions and have many users.
-ServicePermission: a junction table between Service and Permission tables to represent the many-to-many relationship between them. Each service can have many permissions and each permission can be assigned to many services.
-PermissionProfile: a junction table between Permission and Profile tables to represent the many-to-many relationship between them. Each permission can be assigned to many profiles and each profile can have many permissions.
-Relations
-User has a foreign key to Profile.
-User has a many-to-many relationship with Service through the ServicePermission junction table.
-Profile has a many-to-many relationship with Permission through the PermissionProfile junction table.
-Permission has a many-to-many relationship with Service through the ServicePermission junction table.
+## Tables
+- User: stores user information such as email, first name, last name, and password. Each user can have a profile and belong to many services.
+- Profile: stores profile information such as name, description, and type. Each profile can belong to many users and have many permissions.
+- Permission: stores permission information such as name, description, and type. Each permission can belong to many profiles and have many services.
+- Service: stores service information such as name and description. Each service can belong to many permissions and have many users.
+- ServicePermission: a junction table between Service and Permission tables to represent the many-to-many relationship between them. Each service can have many permissions and each permission can be assigned to many services.
+- PermissionProfile: a junction table between Permission and Profile tables to represent the many-to-many relationship between them. Each permission can be assigned to many profiles and each profile can have many permissions.
+
+## Relations
+- User has a foreign key to Profile.
+- User has a many-to-many relationship with Service through the ServicePermission junction table.
+- Profile has a many-to-many relationship with Permission through the PermissionProfile junction table.
+- Permission has a many-to-many relationship with Service through the ServicePermission junction table.
+
 
 
 
