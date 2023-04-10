@@ -30,14 +30,8 @@ strategy:
 2. strategy mane holo , ekta user already logged in kina ta check kora.
 3. stretegy banano hoy user der jonno.
 4. j login korbe tar jonno stretegy make kora hobe.
-----
-
 5. api/permissions api route ti j use korbe strategy ta make kora hobe tar jonno.
-
-question: generateAccessToken can be global?
-
-
-Example:
+----
 
 class Passport {
     
@@ -59,19 +53,23 @@ class Passport {
     }
 }
 
-
-
 passport.use("user-jwt", new Strategy({ secretOrKey, cookieExtractor }, function (payload, done) {
     const user = findUser(payload.email);
     if(user) done(null, user);
     else done(null, false);
 }));
 
-
-
-/users route -> patch method
-
-AuthStrategy(req, res, next) {
+/**
+ * PATCH /users
+ * @function
+ * @middleware
+ * @name AuthStrategy
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ * @returns {undefined}
+ */
+function AuthStrategy(req, res, next) {
     const auth = passport.authenticate("user-jwt", function (err, user) {
         if(!user) return res.status(401).send("Unauthenticated user");
         
@@ -82,5 +80,10 @@ AuthStrategy(req, res, next) {
     
     auth(req, res, next);
 }
+
+
+question: generateAccessToken can be global?
+
+
 
 ----------------------------------------------
