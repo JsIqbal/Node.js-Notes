@@ -29,6 +29,7 @@ class Passport {
     this.cookieExtractor = obj.opt.cookieExtractor;
     this.callback = obj.callback;
   }
+  
   authenticate(strategyName, done) {
     return function (req, res, next) {
       const token = this.cookieExtractor(req);
@@ -37,6 +38,7 @@ class Passport {
     }.bind(this);
   }
 }
+
 passport.use(
   "user-jwt",
   new Strategy({ secretOrKey, cookieExtractor }, function (payload, done) {
@@ -45,6 +47,7 @@ passport.use(
     else done(null, false);
   })
 );
+
 // /users route -> patch method
 function AuthStrategy(req, res, next) {
   const auth = passport.authenticate("user-jwt", function (err, user) {
@@ -53,5 +56,6 @@ function AuthStrategy(req, res, next) {
       next();
     });
   });
+  
   auth(req, res, next);
 }
