@@ -23,7 +23,7 @@
 
 16. git add file name -> to add to git. so that git can track it.
 17. git add . -> to add and trac all the files.
-18. git comit -m "Add first commit" -> to finish the work.
+18. git commit -m "Add first commit" -> to finish the work.
 19. git branch -> to see all the branch.
 20. git branch iqbal/first-project -> to create a new branch.
 
