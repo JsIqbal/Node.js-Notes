@@ -1,68 +1,67 @@
-1. Github is actually a database.
-2. project's codebase are kept in github.
----
+1. **Github is actually a database.**
+2. **Project's codebase is kept in GitHub.**
 
-3. git init -> to initialize git in project.
-4. ls -> to check the list.
-5. ls -a to check even the hidden files folders too.
+3. `git init` -> to initialize git in the project.
+4. `ls` -> to check the list.
+5. `ls -a` to check even the hidden files and folders too.
 
-6. copy the https link from under the code button from github website.
+6. Copy the https link from under the code button from the GitHub website.
 
-7. in terminal: git remote add origin https://github.com/UitsHabib/demeed.git
-9. cd .git/ -> to get into the .git folder.
-8. ls -a -> to check even the hidden list.
+7. In the terminal: `git remote add origin https://github.com/UitsHabib/demeed.git`
+9. `cd .git/` -> to get into the .git folder.
+8. `ls -a` -> to check even the hidden list.
 
-9. see if config file is there in .git folder.
-10. cat config -> access config using.
-11. check if there is an url in the config file.
-12. cd.. to get back to previous directory.
-13. git status -> to check the status of the git tracker.
+9. See if the config file is there in the .git folder.
+10. `cat config` -> to access config using.
+11. Check if there is a URL in the config file.
+12. `cd ..` to get back to the previous directory.
+13. `git status` -> to check the status of the git tracker.
 
-14. we will not add node modules.
-15. use gitignore to ignore the recomended files. One has to just add the file or folder name in the gitignore file to ignore it tracking from git.
+14. We will not add node modules.
+15. Use gitignore to ignore the recommended files. One has to just add the file or folder name in the gitignore file to ignore it from tracking by git.
 
-16. git add file name -> to add to git. so that git can track it.
-17. git add . -> to add and trac all the files.
-18. git commit -m "Add first commit" -> to finish the work.
-19. git branch -> to see all the branch.
-20. git branch iqbal/first-project -> to create a new branch.
+16. `git add file name` -> to add to git so that git can track it.
+17. `git add .` -> to add and track all the files.
+18. `git commit -m "Add first commit"` -> to finish the work.
+19. `git branch` -> to see all the branches.
+20. `git branch iqbal/first-project` -> to create a new branch.
 
-21. git branch -> to see the branch.
+21. `git branch` -> to see the branches.
 
-22. git switch iqbal/first-project -> to switch to the new branch
-23. git push origin iqbal/first-project
+22. `git switch iqbal/first-project` -> to switch to the new branch
+or, `git checkout -b your_branch`
+23. `git push origin iqbal/first-project`
 
-23. git log ---oneline
+23. `git log --oneline`
 
-# if we create a branch from an existing branch, then all the commits will also be in the new branch.
+If we create a branch from an existing branch, then all the commits will also be in the new branch.
 
-24. there are three types of merge:
-     i. rebase merge : master stays at master's place and the new commits stays after that.
+24. There are three types of merge:
+    i. **Rebase Merge**: master stays at the master's place, and the new commits stay after that.
+    ii. **Normal Merge**: `git merge (branch name)`.
+    iii. **Squash Merge**: 1 commit for all the changes.
 
-     ii. normal merge : git merge (branch name).
-     iii. squash merge : 1 commit for all the changes.
+Instructions:
+- `git add .`
+- `git commit -m <commit message>`
 
-# Instruction:
-    a. git add.
-    b. git commit -m <commit message>
-    if push:
-        1. git fetch.
-        2. git rebase origin /develop.
-    
-    single push comand:
-        1. git pull --rebase origin /develop
-    push:
-        * git push --force-with-lease origin <your branch>
+If push:
+1. `git fetch`
+2. `git rebase origin/develop`
 
-{
-x normal merge:
-    if push:
-        1. git fetch.
-        2. git merge origin /develop.
-    
-    single push comand:
-        1. git pull origin /develop
-}
+Single push command:
+1. `git pull --rebase origin/develop`
 
-* rm -fr .git -> remove the .git folder.
-* git push origin -d iqbal/first-project -> delete the wanted branch.
+For Push:
+- `git push --force-with-lease origin <your branch>`
+
+For Normal Merge:
+If push:
+1. `git fetch`
+2. `git merge origin/develop`
+
+Single push command:
+1. `git pull origin/develop`
+
+- `rm -fr .git` -> remove the .git folder.
+- `git push origin -d iqbal/first-project` -> delete the wanted branch.
