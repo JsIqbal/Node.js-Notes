@@ -1,8 +1,8 @@
-**Github is actually a database.**
-**Project's codebase is kept in GitHub.**
+1. **Github is actually a database.**
+2. **Project's codebase is kept in GitHub.**
 
-`git init` -> to initialize git in the project.
-`ls` -> to check the list.
+3. `git init` -> to initialize git in the project.
+4. `ls` -> to check the list.
 5. `ls -a` to check even the hidden files and folders too.
 
 6. Copy the https link from under the code button from the GitHub website.
